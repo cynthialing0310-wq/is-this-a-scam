@@ -7,8 +7,22 @@ from app.main import app
 client = TestClient(app)
 
 
-def test_root_returns_running_message() -> None:
+def test_home_page_loads() -> None:
     response = client.get("/")
 
     assert response.status_code == 200
-    assert response.json() == {"message": "Is This a Scam? is running"}
+    assert "text/html" in response.headers["content-type"]
+    assert "Is This a Scam?" in response.text
+
+
+def test_stylesheet_is_served() -> None:
+    response = client.get("/static/style.css")
+
+    assert response.status_code == 200
+
+
+def test_health_check_reports_ok() -> None:
+    response = client.get("/health")
+
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}

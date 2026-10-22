@@ -34,6 +34,16 @@ Significant choices made while building the project: what we chose, the alternat
 
 ---
 
+## 2026-10-22 — Deploy early, to Render
+
+**Chose:** Deploy now with a landing page, before the checker is built, using Render's free tier. Render redeploys automatically on every push to `main`.
+
+**Alternatives:** Deploy at the end (the original Milestone 8); Railway (trial credit only); Fly.io or Google Cloud Run (faster wake-up, but need a payment card and Docker); Hugging Face Spaces.
+
+**Why:** I wanted a public link for my CV straight away. Deploying early also surfaces hosting problems while the app is still small, and every later improvement goes live with a push. Render was the simplest free option that connects directly to GitHub. The trade-off is that the free tier sleeps after about 15 minutes idle, so the first visit can take 30–60 seconds. We may revisit this if that puts off visitors.
+
+---
+
 ## 2026-10-22 — Test client dependency: `httpx2` instead of `httpx`
 
 **Chose:** `httpx2` for FastAPI's `TestClient`.

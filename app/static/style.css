@@ -1,0 +1,101 @@
+/* Colours as variables, so dark mode only has to swap these values */
+:root {
+  --bg: #f7f7f5;
+  --text: #1f2328;
+  --muted: #57606a;
+  --accent: #1a5fb4;
+  --accent-text: #ffffff;
+  --badge-bg: #fff4d6;
+  --badge-text: #6b4b00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181c;
+    --text: #e6e6e6;
+    --muted: #a0a7b0;
+    --accent: #78aeed;
+    --accent-text: #0d1117;
+    --badge-bg: #3d3214;
+    --badge-text: #f5d77a;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+/* Centred column that stays readable on wide screens and fits phones */
+.page {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin: 0.5rem 0 1rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin: 2rem 0 0.5rem;
+}
+
+.lead {
+  font-size: 1.2rem;
+  color: var(--muted);
+}
+
+.status {
+  display: inline-block;
+  margin: 0;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+.button {
+  display: inline-block;
+  padding: 0.65rem 1.1rem;
+  border-radius: 0.5rem;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button:hover,
+.button:focus-visible {
+  opacity: 0.9;
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}

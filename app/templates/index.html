@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is This a Scam?</title>
+  <meta name="description" content="Paste a suspicious text, email or listing and get a calm, plain-English risk check.">
+  <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+  <main class="page">
+    <p class="status">In development</p>
+
+    <h1>Is This a Scam?</h1>
+    <p class="lead">
+      Paste a suspicious text message, email or marketplace listing, and get a calm,
+      plain-English check of the warning signs.
+    </p>
+
+    <section aria-labelledby="what-heading">
+      <h2 id="what-heading">What it will tell you</h2>
+      <ul>
+        <li><strong>A risk level:</strong> Likely scam, Suspicious, or No obvious red flags.</li>
+        <li><strong>The red flags it found,</strong> each linked to the exact words that triggered it.</li>
+        <li><strong>What to do next,</strong> such as not clicking a link and contacting the company through its official website.</li>
+        <li><strong>A note when it isn't sure,</strong> instead of guessing.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="how-heading">
+      <h2 id="how-heading">How it works</h2>
+      <p>
+        Two layers of checks. Fast rule-based checks look for known warning signs, like shortened
+        links, pressure to act quickly, and requests for gift cards or crypto. An AI model then
+        reads the whole message. If the AI is unavailable, you still get the rule-based result.
+      </p>
+      <p>
+        It never opens links in your message, and it never stores what you paste.
+      </p>
+    </section>
+
+    <section aria-labelledby="build-heading">
+      <h2 id="build-heading">Built with</h2>
+      <p>Python, FastAPI, the Claude API, Pydantic and pytest.</p>
+      <p>
+        <a class="button" href="https://github.com/cynthialing0310-wq/is-this-a-scam">View the code on GitHub</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

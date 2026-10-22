@@ -2,6 +2,9 @@
 fastapi==0.143.3
 uvicorn==0.54.0
 
+# Fills in HTML templates (the web pages)
+jinja2==3.1.6
+
 # Loads settings (like the API key) from the .env file
 python-dotenv==1.2.4
 
