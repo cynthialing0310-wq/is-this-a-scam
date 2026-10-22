@@ -5,6 +5,6 @@ uvicorn==0.54.0
 # Loads settings (like the API key) from the .env file
 python-dotenv==1.2.4
 
-# Testing: pytest runs the tests, httpx lets FastAPI's TestClient make fake requests
+# Testing: pytest runs the tests, httpx2 lets FastAPI's TestClient make fake requests
 pytest==9.1.1
-httpx==0.28.1
+httpx2==2.16.0
