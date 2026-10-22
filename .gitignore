@@ -1,0 +1,21 @@
+# Secrets: never commit the real .env (the .env.example template is fine)
+.env
+
+# Virtual environment: rebuilt from requirements.txt, so no need to commit it
+.venv/
+
+# Python's compiled bytecode cache
+__pycache__/
+*.pyc
+
+# Tool caches
+.pytest_cache/
+
+# Local SQLite database (feedback data stays on the machine/server)
+*.db
+
+# Editor and OS clutter
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
