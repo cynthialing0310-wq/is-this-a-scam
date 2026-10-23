@@ -1,0 +1,4 @@
+# Use LF line endings for all text files, on every machine.
+# The app runs on Linux (Render, GitHub Actions), and this stops
+# Windows/Mac differences showing up as noise in diffs.
+* text=auto eol=lf
