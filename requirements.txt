@@ -2,6 +2,9 @@
 fastapi==0.143.3
 uvicorn==0.54.0
 
+# Data models with validation (FastAPI installs it too, but we use it directly)
+pydantic==2.14.1
+
 # Fills in HTML templates (the web pages)
 jinja2==3.1.6
 
