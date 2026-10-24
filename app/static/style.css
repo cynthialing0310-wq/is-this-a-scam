@@ -7,6 +7,14 @@
   --accent-text: #ffffff;
   --badge-bg: #fff4d6;
   --badge-text: #6b4b00;
+  --surface: #ffffff;
+  --border: #d0d7de;
+  --high-bg: #fde8e8;
+  --high-text: #8a1c1c;
+  --medium-bg: #fff4d6;
+  --medium-text: #6b4b00;
+  --low-bg: #e6f2ea;
+  --low-text: #1d5c34;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,6 +26,14 @@
     --accent-text: #0d1117;
     --badge-bg: #3d3214;
     --badge-text: #f5d77a;
+    --surface: #1f2228;
+    --border: #3a3f47;
+    --high-bg: #4a1d1d;
+    --high-text: #ffb3b3;
+    --medium-bg: #3d3214;
+    --medium-text: #f5d77a;
+    --low-bg: #1b3826;
+    --low-text: #a6e3b8;
   }
 }
 
@@ -98,4 +114,102 @@ a {
 .button:focus-visible {
   outline: 3px solid var(--text);
   outline-offset: 2px;
+}
+
+/* --- Paste box ----------------------------------------------------------- */
+
+.checker {
+  margin: 1.5rem 0;
+}
+
+.checker label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.help {
+  margin: 0.4rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+button.button {
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+@media (min-width: 30rem) {
+  button.button {
+    width: auto;
+  }
+}
+
+/* --- Results ------------------------------------------------------------- */
+
+.error {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--high-bg);
+  color: var(--high-text);
+  font-weight: 600;
+}
+
+.result {
+  margin: 1.5rem 0 2.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--surface);
+}
+
+.risk {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 1.25rem;
+}
+
+.risk-high { background: var(--high-bg); color: var(--high-text); }
+.risk-medium { background: var(--medium-bg); color: var(--medium-text); }
+.risk-low { background: var(--low-bg); color: var(--low-text); }
+
+.note {
+  color: var(--muted);
+  font-style: italic;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 1.25rem 0 0.4rem;
+}
+
+.flags li {
+  margin-bottom: 0.75rem;
+}
+
+.match {
+  display: block;
+  font-weight: 600;
+  word-break: break-all; /* Long links shouldn't push the page wider than a phone */
 }

@@ -8,6 +8,9 @@ pydantic==2.14.1
 # Fills in HTML templates (the web pages)
 jinja2==3.1.6
 
+# Lets FastAPI read submitted HTML forms
+python-multipart==0.0.32
+
 # Loads settings (like the API key) from the .env file
 python-dotenv==1.2.4
 

@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Is This a Scam?</title>
-  <meta name="description" content="Paste a suspicious text, email or listing and get a calm, plain-English risk check.">
+  <meta name="description" content="Paste a suspicious text, email or listing and get a calm, plain-English check of the warning signs.">
   <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
 </head>
 <body>
   <main class="page">
-    <p class="status">In development</p>
+    <p class="status">Early version</p>
 
     <h1>Is This a Scam?</h1>
     <p class="lead">
@@ -17,35 +17,82 @@
       plain-English check of the warning signs.
     </p>
 
-    <section aria-labelledby="what-heading">
-      <h2 id="what-heading">What it will tell you</h2>
-      <ul>
-        <li><strong>A risk level:</strong> Likely scam, Suspicious, or No obvious red flags.</li>
-        <li><strong>The red flags it found,</strong> each linked to the exact words that triggered it.</li>
-        <li><strong>What to do next,</strong> such as not clicking a link and contacting the company through its official website.</li>
-        <li><strong>A note when it isn't sure,</strong> instead of guessing.</li>
-      </ul>
-    </section>
+    <form class="checker" method="post" action="/check#result">
+      <label for="message">Paste the message</label>
+      <textarea id="message" name="message" rows="8" maxlength="{{ max_length }}"
+                aria-describedby="message-help"
+                placeholder="For example: Your parcel could not be delivered. Pay the £1.99 fee within 24 hours at bit.ly/..."
+                required>{{ message or "" }}</textarea>
+      <p id="message-help" class="help">
+        We never store your message. <span id="char-count" aria-live="polite"></span>
+      </p>
+      <button type="submit" class="button">Check message</button>
+    </form>
+
+    {% if error %}
+      <p id="result" class="error" role="alert">{{ error }}</p>
+    {% endif %}
+
+    {% if result %}
+      <section id="result" class="result" aria-labelledby="result-heading">
+        {% set level_class = {"Likely scam": "high", "Suspicious": "medium", "No obvious red flags": "low"}[result.risk_level] %}
+        <h2 id="result-heading" class="risk risk-{{ level_class }}">{{ result.risk_level }}</h2>
+
+        {% if result.confidence_note %}
+          <p class="note">{{ result.confidence_note }}</p>
+        {% endif %}
+
+        {% if result.red_flags %}
+          <h3>Red flags we found</h3>
+          <ul class="flags">
+            {% for flag in result.red_flags %}
+              <li>
+                <q class="match">{{ flag.matched_text }}</q>
+                <span>{{ flag.explanation }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        <h3>What to do next</h3>
+        <ul>
+          {% for step in result.next_steps %}
+            <li>{{ step }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
 
     <section aria-labelledby="how-heading">
       <h2 id="how-heading">How it works</h2>
       <p>
-        Two layers of checks. Fast rule-based checks look for known warning signs, like shortened
-        links, pressure to act quickly, and requests for gift cards or crypto. An AI model then
-        reads the whole message. If the AI is unavailable, you still get the rule-based result.
+        Right now, the check uses rules that look for common warning signs: shortened or
+        lookalike links, pressure to act quickly, and requests for gift cards, crypto or
+        transfers. An AI layer that reads the whole message is being added next.
       </p>
       <p>
-        It never opens links in your message, and it never stores what you paste.
+        It never opens links in your message, and it never stores what you paste. It can't
+        prove a message is safe, only point out warning signs, so if something feels wrong,
+        trust your instincts.
       </p>
     </section>
 
     <section aria-labelledby="build-heading">
       <h2 id="build-heading">Built with</h2>
-      <p>Python, FastAPI, the Claude API, Pydantic and pytest.</p>
+      <p>Python, FastAPI, Pydantic, Jinja2 and pytest.</p>
       <p>
-        <a class="button" href="https://github.com/cynthialing0310-wq/is-this-a-scam">View the code on GitHub</a>
+        <a href="https://github.com/cynthialing0310-wq/is-this-a-scam">View the code on GitHub</a>
       </p>
     </section>
   </main>
+
+  <script>
+    // Live character counter, so people know how much they can paste
+    const box = document.getElementById("message");
+    const counter = document.getElementById("char-count");
+    const update = () => { counter.textContent = `${box.value.length.toLocaleString()} / ${box.maxLength.toLocaleString()} characters`; };
+    box.addEventListener("input", update);
+    update();
+  </script>
 </body>
 </html>
