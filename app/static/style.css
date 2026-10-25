@@ -213,3 +213,14 @@ h3 {
   font-weight: 600;
   word-break: break-all; /* Long links shouldn't push the page wider than a phone */
 }
+
+.checked-by {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+button.button:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}

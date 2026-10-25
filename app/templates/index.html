@@ -17,7 +17,7 @@
       plain-English check of the warning signs.
     </p>
 
-    <form class="checker" method="post" action="/check#result">
+    <form class="checker" id="checker" method="post" action="/check#result">
       <label for="message">Paste the message</label>
       <textarea id="message" name="message" rows="8" maxlength="{{ max_length }}"
                 aria-describedby="message-help"
@@ -26,7 +26,7 @@
       <p id="message-help" class="help">
         We never store your message. <span id="char-count" aria-live="polite"></span>
       </p>
-      <button type="submit" class="button">Check message</button>
+      <button type="submit" class="button" id="check-button">Check message</button>
     </form>
 
     {% if error %}
@@ -60,15 +60,21 @@
             <li>{{ step }}</li>
           {% endfor %}
         </ul>
+
+        <p class="checked-by">
+          {% if result.ai_used %}Checked by our pattern rules and our AI check.{% else %}Checked by our pattern rules only.{% endif %}
+        </p>
       </section>
     {% endif %}
 
     <section aria-labelledby="how-heading">
       <h2 id="how-heading">How it works</h2>
       <p>
-        Right now, the check uses rules that look for common warning signs: shortened or
-        lookalike links, pressure to act quickly, and requests for gift cards, crypto or
-        transfers. An AI layer that reads the whole message is being added next.
+        Two layers of checks. First, fast pattern rules look for common warning signs:
+        shortened or lookalike links, pressure to act quickly, and requests for gift cards,
+        crypto or transfers. Then an AI model reads the whole message for anything the rules
+        can't spot, like someone pretending to be a family member. If the AI is unavailable,
+        you still get the rule-based result.
       </p>
       <p>
         It never opens links in your message, and it never stores what you paste. It can't
@@ -79,7 +85,7 @@
 
     <section aria-labelledby="build-heading">
       <h2 id="build-heading">Built with</h2>
-      <p>Python, FastAPI, Pydantic, Jinja2 and pytest.</p>
+      <p>Python, FastAPI, the Claude API, Pydantic, Jinja2 and pytest.</p>
       <p>
         <a href="https://github.com/cynthialing0310-wq/is-this-a-scam">View the code on GitHub</a>
       </p>
@@ -93,6 +99,14 @@
     const update = () => { counter.textContent = `${box.value.length.toLocaleString()} / ${box.maxLength.toLocaleString()} characters`; };
     box.addEventListener("input", update);
     update();
+
+    // The AI check takes a few seconds, so show that something is happening
+    // and stop the form being sent twice
+    const button = document.getElementById("check-button");
+    document.getElementById("checker").addEventListener("submit", () => {
+      button.disabled = true;
+      button.textContent = "Checking…";
+    });
   </script>
 </body>
 </html>
