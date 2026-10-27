@@ -160,3 +160,12 @@ def test_ai_can_raise_the_risk_level_when_rules_find_nothing(fake_ai: SetAI) -> 
 
     assert result.risk_level == "Suspicious"
     assert result.red_flags == [flag]
+
+
+def test_use_ai_false_skips_the_ai_even_when_it_is_set_up(fake_ai: SetAI) -> None:
+    fake_ai(AIAnalysis(risk_level="Likely scam", red_flags=[], confidence_note=None))
+
+    result = analyse_message(SCAM, use_ai=False)
+
+    assert result.ai_used is False
+    assert result.risk_level == "Suspicious"

@@ -122,9 +122,9 @@ def next_steps_for(flags: list[RedFlag]) -> list[str]:
     return steps
 
 
-def _try_ai(text: str) -> AIAnalysis | None:
-    """Run the AI check, or return None if it isn't set up or fails."""
-    if not ai_is_configured():
+def _try_ai(text: str, use_ai: bool) -> AIAnalysis | None:
+    """Run the AI check, or return None if it's switched off, not set up, or fails."""
+    if not use_ai or not ai_is_configured():
         return None
     try:
         return analyse_with_ai(text)
@@ -134,11 +134,14 @@ def _try_ai(text: str) -> AIAnalysis | None:
         return None
 
 
-def analyse_message(text: str) -> AnalysisResult:
-    """Check a message and build the full result. Assumes validate_message has passed."""
+def analyse_message(text: str, use_ai: bool = True) -> AnalysisResult:
+    """Check a message and build the full result. Assumes validate_message has passed.
+
+    use_ai=False runs the rule checks only. The evaluation uses it to compare the two.
+    """
     rule_flags = run_all_checks(text)
     rule_risk = risk_level_from_flags(rule_flags)
-    ai_result = _try_ai(text)
+    ai_result = _try_ai(text, use_ai)
     notes: list[str] = []
 
     if ai_result is None:

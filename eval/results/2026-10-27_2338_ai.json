@@ -1,0 +1,577 @@
+{
+  "mode": "ai",
+  "summary": {
+    "messages": 53,
+    "accuracy": 96.2,
+    "scam_catch_rate": 100.0,
+    "false_alarm_rate": 8.7,
+    "scams_marked_likely_scam": 100.0,
+    "average_seconds": 2.8,
+    "slowest_seconds": 5.161,
+    "ai_used_on": 53,
+    "missed_scam_ids": [],
+    "false_alarm_ids": [
+      "35",
+      "46"
+    ],
+    "by_category": {
+      "HMRC/tax": {
+        "scams": 2,
+        "caught": 2,
+        "legit": 2,
+        "false_alarms": 0
+      },
+      "bank": {
+        "scams": 4,
+        "caught": 4,
+        "legit": 4,
+        "false_alarms": 1
+      },
+      "crypto": {
+        "scams": 2,
+        "caught": 2,
+        "legit": 1,
+        "false_alarms": 0
+      },
+      "family impersonation": {
+        "scams": 2,
+        "caught": 2,
+        "legit": 2,
+        "false_alarms": 0
+      },
+      "government": {
+        "scams": 3,
+        "caught": 3,
+        "legit": 2,
+        "false_alarms": 0
+      },
+      "job offer": {
+        "scams": 2,
+        "caught": 2,
+        "legit": 2,
+        "false_alarms": 0
+      },
+      "marketplace": {
+        "scams": 3,
+        "caught": 3,
+        "legit": 2,
+        "false_alarms": 1
+      },
+      "parcel delivery": {
+        "scams": 4,
+        "caught": 4,
+        "legit": 3,
+        "false_alarms": 0
+      },
+      "personal": {
+        "scams": 0,
+        "caught": 0,
+        "legit": 1,
+        "false_alarms": 0
+      },
+      "prize": {
+        "scams": 2,
+        "caught": 2,
+        "legit": 1,
+        "false_alarms": 0
+      },
+      "prompt injection": {
+        "scams": 2,
+        "caught": 2,
+        "legit": 0,
+        "false_alarms": 0
+      },
+      "romance": {
+        "scams": 2,
+        "caught": 2,
+        "legit": 1,
+        "false_alarms": 0
+      },
+      "subscription": {
+        "scams": 2,
+        "caught": 2,
+        "legit": 2,
+        "false_alarms": 0
+      }
+    }
+  },
+  "outcomes": [
+    {
+      "id": "1",
+      "label": "scam",
+      "category": "parcel delivery",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 4.533
+    },
+    {
+      "id": "2",
+      "label": "scam",
+      "category": "parcel delivery",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.916
+    },
+    {
+      "id": "3",
+      "label": "scam",
+      "category": "parcel delivery",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.731
+    },
+    {
+      "id": "4",
+      "label": "scam",
+      "category": "parcel delivery",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.197
+    },
+    {
+      "id": "5",
+      "label": "scam",
+      "category": "bank",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 4.764
+    },
+    {
+      "id": "6",
+      "label": "scam",
+      "category": "bank",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.547
+    },
+    {
+      "id": "7",
+      "label": "scam",
+      "category": "bank",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 5.13
+    },
+    {
+      "id": "8",
+      "label": "scam",
+      "category": "bank",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.14
+    },
+    {
+      "id": "9",
+      "label": "scam",
+      "category": "HMRC/tax",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.357
+    },
+    {
+      "id": "10",
+      "label": "scam",
+      "category": "HMRC/tax",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.975
+    },
+    {
+      "id": "11",
+      "label": "scam",
+      "category": "job offer",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 3.269
+    },
+    {
+      "id": "12",
+      "label": "scam",
+      "category": "job offer",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 1.857
+    },
+    {
+      "id": "13",
+      "label": "scam",
+      "category": "crypto",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 4.012
+    },
+    {
+      "id": "14",
+      "label": "scam",
+      "category": "crypto",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.133
+    },
+    {
+      "id": "15",
+      "label": "scam",
+      "category": "romance",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 3.691
+    },
+    {
+      "id": "16",
+      "label": "scam",
+      "category": "romance",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 4.679
+    },
+    {
+      "id": "17",
+      "label": "scam",
+      "category": "marketplace",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.7
+    },
+    {
+      "id": "18",
+      "label": "scam",
+      "category": "marketplace",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 5.161
+    },
+    {
+      "id": "19",
+      "label": "scam",
+      "category": "marketplace",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 1.883
+    },
+    {
+      "id": "20",
+      "label": "scam",
+      "category": "prize",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.753
+    },
+    {
+      "id": "21",
+      "label": "scam",
+      "category": "prize",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.194
+    },
+    {
+      "id": "22",
+      "label": "scam",
+      "category": "family impersonation",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 3.854
+    },
+    {
+      "id": "23",
+      "label": "scam",
+      "category": "family impersonation",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 3.569
+    },
+    {
+      "id": "24",
+      "label": "scam",
+      "category": "subscription",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 3.588
+    },
+    {
+      "id": "25",
+      "label": "scam",
+      "category": "subscription",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 4.909
+    },
+    {
+      "id": "26",
+      "label": "scam",
+      "category": "government",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.035
+    },
+    {
+      "id": "27",
+      "label": "scam",
+      "category": "government",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.239
+    },
+    {
+      "id": "28",
+      "label": "scam",
+      "category": "government",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 3.32
+    },
+    {
+      "id": "29",
+      "label": "scam",
+      "category": "prompt injection",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.6
+    },
+    {
+      "id": "30",
+      "label": "scam",
+      "category": "prompt injection",
+      "risk_level": "Likely scam",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 3.871
+    },
+    {
+      "id": "31",
+      "label": "legit",
+      "category": "parcel delivery",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 4.178
+    },
+    {
+      "id": "32",
+      "label": "legit",
+      "category": "parcel delivery",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.15
+    },
+    {
+      "id": "33",
+      "label": "legit",
+      "category": "parcel delivery",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.047
+    },
+    {
+      "id": "34",
+      "label": "legit",
+      "category": "bank",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.665
+    },
+    {
+      "id": "35",
+      "label": "legit",
+      "category": "bank",
+      "risk_level": "Suspicious",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 2.697
+    },
+    {
+      "id": "36",
+      "label": "legit",
+      "category": "bank",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 1.502
+    },
+    {
+      "id": "37",
+      "label": "legit",
+      "category": "bank",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.612
+    },
+    {
+      "id": "38",
+      "label": "legit",
+      "category": "subscription",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 1.382
+    },
+    {
+      "id": "39",
+      "label": "legit",
+      "category": "HMRC/tax",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.253
+    },
+    {
+      "id": "40",
+      "label": "legit",
+      "category": "HMRC/tax",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.048
+    },
+    {
+      "id": "41",
+      "label": "legit",
+      "category": "job offer",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.227
+    },
+    {
+      "id": "42",
+      "label": "legit",
+      "category": "job offer",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.175
+    },
+    {
+      "id": "43",
+      "label": "legit",
+      "category": "crypto",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 3.79
+    },
+    {
+      "id": "44",
+      "label": "legit",
+      "category": "romance",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 1.168
+    },
+    {
+      "id": "45",
+      "label": "legit",
+      "category": "marketplace",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.312
+    },
+    {
+      "id": "46",
+      "label": "legit",
+      "category": "marketplace",
+      "risk_level": "Suspicious",
+      "flagged": true,
+      "ai_used": true,
+      "seconds": 1.973
+    },
+    {
+      "id": "47",
+      "label": "legit",
+      "category": "prize",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.227
+    },
+    {
+      "id": "48",
+      "label": "legit",
+      "category": "family impersonation",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.09
+    },
+    {
+      "id": "49",
+      "label": "legit",
+      "category": "family impersonation",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 1.254
+    },
+    {
+      "id": "50",
+      "label": "legit",
+      "category": "subscription",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.489
+    },
+    {
+      "id": "51",
+      "label": "legit",
+      "category": "government",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 2.268
+    },
+    {
+      "id": "52",
+      "label": "legit",
+      "category": "government",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 3.057
+    },
+    {
+      "id": "53",
+      "label": "legit",
+      "category": "personal",
+      "risk_level": "No obvious red flags",
+      "flagged": false,
+      "ai_used": true,
+      "seconds": 1.222
+    }
+  ]
+}
