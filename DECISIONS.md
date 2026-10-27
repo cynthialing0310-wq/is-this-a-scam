@@ -40,7 +40,19 @@ Significant choices made while building the project: what we chose, the alternat
 
 **Alternatives:** Deploy at the end (the original Milestone 8); Railway (trial credit only); Fly.io or Google Cloud Run (faster wake-up, but need a payment card and Docker); Hugging Face Spaces.
 
-**Why:** I wanted a public link for my CV straight away. Deploying early also surfaces hosting problems while the app is still small, and every later improvement goes live with a push. Render was the simplest free option that connects directly to GitHub. The trade-off is that the free tier sleeps after about 15 minutes idle, so the first visit can take 30–60 seconds. We may revisit this if that puts off visitors.
+**Why:** I wanted a public demo link straight away. Deploying early also surfaces hosting problems while the app is still small, and every later improvement goes live with a push. Render was the simplest free option that connects directly to GitHub. The trade-off is that the free tier sleeps after about 15 minutes idle, so the first visit can take 30–60 seconds. We may revisit this if that puts off visitors.
+
+---
+
+## 2026-10-27 — Evaluation: how a result is scored
+
+**Chose:** A message counts as **flagged** if the app says *Likely scam* or *Suspicious*. The headline numbers are the **scam catch rate** (scams flagged) and the **false alarm rate** (genuine messages flagged). The share of scams marked *Likely scam* is reported separately. Each run is saved to `eval/results/` with its date and mode (`rules` or `ai`).
+
+**Alternatives:** Only count *Likely scam* as a catch; report a single accuracy figure.
+
+**Why:** For someone checking a message, *Suspicious* already does its job: it tells them to slow down and check. Missing a scam is the worst failure, so the catch rate is the main number, with the false alarm rate next to it so it can't be improved by flagging everything. Accuracy alone would hide which of the two is going wrong.
+
+**Data:** 53 messages written for this project: 30 scams and 23 genuine messages across 13 categories. They include genuine messages that look alarming (fraud alerts, one-time codes, delivery updates) and two prompt-injection attempts. They use Ofcom's reserved drama phone numbers (07700 900xxx) and made-up domains, so there's no real personal data. Messages from the public UCI SMS Spam Collection could be added later. It's a small set I wrote myself, so the numbers show direction, not a precise rate.
 
 ---
 

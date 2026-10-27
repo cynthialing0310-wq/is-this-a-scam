@@ -14,8 +14,9 @@ __pycache__/
 # Local SQLite database (feedback data stays on the machine/server)
 *.db
 
-# Local Claude Code settings (CLAUDE.md at the root is still committed)
+# Local Claude Code settings and notes, kept private
 .claude/
+CLAUDE.md
 
 # Editor and OS clutter
 .vscode/
